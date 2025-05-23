@@ -8,29 +8,8 @@ This project provides a modular Go-based solution comprising two command-line to
 - **Downloader**: Downloads files from specified URLs, manages extraction, and processes packages.
 - **Package Manager**: Processes JSON package lists, checks availability in Chocolatey repositories, and logs missing packages.
 
-## Project Structure
+*The package manager on the new version is implemented both using Go and Python because of maintability. Feel free to use your flavor of choice.*
 
-```
-project-root/
-├── cmd/
-│   ├── downloader/
-│   │   └── main.go
-│   └── packagemanager/
-│       └── main.go
-├── internal/
-│   ├── common/
-│   │   ├── env.go
-│   │   └── utils.go
-│   ├── downloader/
-│   │   └── downloader.go
-│   └── packagemanager/
-│       └── package.go
-├── data/
-│   └── example.txt
-├── output/
-├── .env
-├── go.mod
-└── go.sum
 ```
 
 ## Installation
