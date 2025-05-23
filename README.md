@@ -10,6 +10,30 @@ This project provides a modular Go-based solution comprising two command-line to
 
 *The package manager on the new version is implemented both using Go and Python because of maintability. Feel free to use your flavor of choice.*
 
+
+## Project Structure
+
+```
+project-root/
+├── cmd/
+│   ├── downloader/
+│   │   └── main.go
+│   └── packagemanager/
+│       └── main.go
+├── internal/
+│   ├── common/
+│   │   ├── env.go
+│   │   └── utils.go
+│   ├── downloader/
+│   │   └── downloader.go
+│   └── packagemanager/
+│       └── package.go
+├── data/
+│   └── example.txt
+├── output/
+├── .env
+├── go.mod
+└── go.sum
 ```
 
 ## Installation
@@ -55,6 +79,46 @@ To execute the package manager:
 ```bash
 go run cmd/packagemanager/main.go
 ```
+
+## Python Modular Downloader Script
+
+This Python script downloads and extracts package files from given URLs and processes them in a modular way.
+
+### Usage
+
+Ensure you have the `.env` file with `LINKS` variable set, and the input file `data/final_list.txt` ready.
+
+Run the script with:
+
+```bash
+python main.py
+```
+
+### Requirements
+
+- Python 3.x
+- `requests`
+- `python-dotenv`
+
+Install dependencies with:
+
+```bash
+pip install requests python-dotenv
+```
+
+### Python Code Structure
+
+- `main.py`: Entry point that reads input, iterates packages, and triggers processing.
+- `package_downloader/`
+  - `file_utils.py`: File and directory utility functions.
+  - `download_utils.py`: Downloading files from URLs.
+  - `package_utils.py`: Renaming and extracting packages.
+  - `parser.py`: Parsing package lines.
+  - `processor.py`: Handles the package processing workflow.
+
+For details, see the [Python modularization conversation](#).
+
+---
 
 ## Output
 
